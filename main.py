@@ -9,3 +9,12 @@ def onDisconnect(client, userdata, rc):
     pass
 def onMessage(client, userdata, message):
     pass
+
+
+client= mqtt.Client(client_id='arhaLap')
+
+
+client.on_connect    = connected
+client.on_disconnect = disconnected
+client.on_message    = message
+client.on_subscribe  = subscribed
