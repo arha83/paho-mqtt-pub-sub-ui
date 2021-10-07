@@ -3,13 +3,13 @@ import time
 
 
 def onConnect(client, userdata, flags_dict, result):
-    print('connected...?!', type(result))
+    print('onConnect')
 def onSubscribe(client, userdata, mid, granted_qos):
-    pass
+    print('onSubscribe')
 def onDisconnect(client, userdata, rc):
-    print('disconnecting')
+    print('onDisconnect')
 def onMessage(client, userdata, message):
-    pass
+    print('onMessage')
 
 
 client= mqtt.Client(client_id='arhaLap')
@@ -18,9 +18,7 @@ client.on_disconnect = onDisconnect
 client.on_message    = onMessage
 client.on_subscribe  = onMessage
 
-print('Connecting')
+
 client.connect('192.168.1.33')
-print('Sleeping')
 time.sleep(5)
-print('disconnecting')
 client.disconnect()
