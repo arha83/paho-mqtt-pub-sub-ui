@@ -13,10 +13,10 @@ def onMessage(client, userdata, message):
 
 
 client= mqtt.Client(client_id='arhaLap')
-client.on_connect    = connected
-client.on_disconnect = disconnected
-client.on_message    = message
-client.on_subscribe  = subscribed
+client.on_connect    = onConnect
+client.on_disconnect = onDisconnect
+client.on_message    = onMessage
+client.on_subscribe  = onMessage
 
 print('Connecting')
 client.connect('192.168.1.33')
